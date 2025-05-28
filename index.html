@@ -73,7 +73,7 @@
         귀한 걸음으로 축하하여 주시면<br>
         더없는 기쁨으로 간직하겠습니다.</p>
     </section>
-    <img style="width: 100%;" src="images/heart-line02.png">
+    <img style="width: 100%;" src="images/heart_line02.svg">
     
     <!-- 날짜 달력 -->
     <section id="calendar">
@@ -229,48 +229,96 @@
 
     <!-- 06. 마음 전하실 곳 -->
 <section id="gift">
-  <img src="images/heart_icon.png" alt="heart icon">
+  <img src="images/heart_icon.svg" alt="heart icon">
   <h2 class="title" style="font-size: 24px; color: #114D12">마음 전하실 곳</h2>
-<button id="toggleAccountsBtn" aria-expanded="false" aria-controls="accountList">
-  <span class="btn-text">신랑측 계좌번호</span>
-  <svg id="arrowIcon" width="24" height="24" viewBox="0 0 24 24">
-    <path d="M8 10l4 4 4-4" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-</button>
-  <div id="accountList" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
+  <!-- 신랑측 계좌번호 -->
+  <button class="toggle-btn" data-target="groomAccountList">
+    <span class="btn-text">신랑측 계좌번호</span>
+    <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24">
+      <path d="M8 10l4 4 4-4" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <div id="groomAccountList" class="account-list">
     <div class="account-row">
       <div class="account-info">
-        <span class="bank">국민은행</span> | 
-        <span class="number">000-0000-0000</span> 
-        <span class="owner">홍길동</span>
+        <span class="bank">농협은행</span>
+        <span class="number">351-0913-2213-83</span><br>
+        <span class="owner">양건열</span>
       </div>
-      <button class="copy-btn" data-account="000-0000-0000">복사</button>
+      <button class="copy-btn" data-account="351-0913-2213-83">복사</button>
     </div>
-    <div class="account-row">
+        <div class="account-row">
       <div class="account-info">
-        <span class="bank">신한은행</span> | 
-        <span class="number">111-1111-1111</span> 
-        <span class="owner">홍길동</span>
+        <span class="bank">농협은행</span>
+        <span class="number">351-0913-2213-83</span><br>
+        <span class="owner">양동채</span>
       </div>
-      <button class="copy-btn" data-account="111-1111-1111">복사</button>
+      <button class="copy-btn" data-account="351-0913-2213-83">복사</button>
     </div>
+        <div class="account-row">
+      <div class="account-info">
+        <span class="bank">농협은행</span>
+        <span class="number">351-0913-2213-83</span><br>
+        <span class="owner">김자영</span>
+      </div>
+      <button class="copy-btn" data-account="351-0913-2213-83">복사</button>
+    </div>
+  </div>
+
+  <!-- 신부측 계좌번호 -->
+  <button class="toggle-btn" data-target="brideAccountList">
+    <span class="btn-text">신부측 계좌번호</span>
+    <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24">
+      <path d="M8 10l4 4 4-4" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <div id="brideAccountList" class="account-list">
     <div class="account-row">
       <div class="account-info">
-        <span class="bank">하나은행</span> | 
-        <span class="number">222-2222-2222</span> 
-        <span class="owner">홍길동</span>
+        <span class="bank">농협은행</span>
+        <span class="number">333-3333-3333</span><br>
+        <span class="owner">고은별</span>
       </div>
-      <button class="copy-btn" data-account="222-2222-2222">복사</button>
+      <button class="copy-btn" data-account="333-3333-3333">복사</button>
+    </div>
+        <div class="account-row">
+      <div class="account-info">
+        <span class="bank">농협은행</span>
+        <span class="number">333-3333-3333</span><br>
+        <span class="owner">고성식</span>
+      </div>
+      <button class="copy-btn" data-account="333-3333-3333">복사</button>
+    </div>
+        <div class="account-row">
+      <div class="account-info">
+        <span class="bank">농협은행</span>
+        <span class="number">333-3333-3333</span><br>
+        <span class="owner">유미란</span>
+      </div>
+      <button class="copy-btn" data-account="333-3333-3333">복사</button>
     </div>
   </div>
 </section>
-
+<section id="footer">
+  <button id="copyLinkBtn"><img style="height: 16px;" src="images/link_icon.png"> 링크주소 복사하기</button>
+  <p>© 2025. Made with love by sori</p>
+</section>
 
 
 
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+<script>
+  document.getElementById('copyLinkBtn').addEventListener('click', () => {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url)
+      .then(() => alert('링크가 복사되었습니다!'))
+      .catch(() => alert('복사에 실패했습니다.'));
+  });
+</script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     // Fancybox 자동 초기화됨
@@ -301,25 +349,21 @@ const swiper = new Swiper('.swiper-container', {
 });
 </script>
 <script>
-  const toggleBtn = document.getElementById('toggleAccountsBtn');
-  const accountList = document.getElementById('accountList');
-  const arrowIcon = document.getElementById('arrowIcon');
+document.querySelectorAll('.toggle-btn').forEach(button => {
+  const arrow = button.querySelector('.arrow-icon');
+  const targetId = button.getAttribute('data-target');
+  const targetList = document.getElementById(targetId);
 
-  toggleBtn.addEventListener('click', () => {
-    const isOpen = accountList.classList.toggle('open');
-    toggleBtn.setAttribute('aria-expanded', isOpen);
+  button.addEventListener('click', () => {
+    const isOpen = targetList.classList.toggle('open');
+    button.setAttribute('aria-expanded', isOpen);
 
-    if (isOpen) {
-      // max-height 설정을 강제로 재설정 (애니메이션 위해)
-      accountList.style.maxHeight = accountList.scrollHeight + "px";
-      arrowIcon.style.transform = 'rotate(180deg)';
-    } else {
-      accountList.style.maxHeight = null;
-      arrowIcon.style.transform = isOpen
-        ? 'translate(-50%, -50%) rotate(180deg)'
-        : 'translate(-50%, -50%) rotate(0deg)';   
-       }
+    targetList.style.maxHeight = isOpen ? targetList.scrollHeight + "px" : null;
+    arrow.style.transform = isOpen
+      ? 'translate(-50%, -50%) rotate(180deg)'
+      : 'translate(-50%, -50%) rotate(0deg)';
   });
+});
 
   // 복사 버튼 이벤트 (기존 코드 유지)
   document.querySelectorAll('.copy-btn').forEach(button => {

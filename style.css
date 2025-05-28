@@ -5,7 +5,12 @@
     font-weight: 300;
     font-style: normal;
 }
-
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
 body {
   font-family: 'GowunDodum-Regular', sans-serif;
   font-size: 18px;
@@ -17,6 +22,9 @@ body {
   justify-content: center;
   align-items: start;
   min-height: 100vh;
+}
+button {
+  font-family: 'GowunDodum-Regular', sans-serif;
 }
 a {
   text-decoration: none;
@@ -278,6 +286,7 @@ padding: 0 10px;
 
 #gallery {
   padding: 20px;
+  margin: 90px 0;
 }
 .swiper-container {
   position: relative;
@@ -316,7 +325,7 @@ padding: 0 10px;
     text-align: center;
   }
 
-  #toggleAccountsBtn {
+  .toggle-btn {
     position: relative;
     background-color: #699169;
     color: white;
@@ -326,41 +335,48 @@ padding: 0 10px;
     font-size: 16px;
     border-radius: 4px;
     width: 100%;
-    max-width: 280px;
-    margin: 0 auto;
+    max-width: 300px;
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
   }
 
-  #toggleAccountsBtn .btn-text {
+  .toggle-btn .btn-text {
     flex: 1;
     text-align: center;
   }
 
-  #toggleAccountsBtn svg {
+  .toggle-btn .arrow-icon {
     position: absolute;
     top: 50%;
     right: 0%;
-    margin-left: auto;
     transition: transform 0.3s ease;
     transform: translate(-50%, -50%);
     display: block;
   }
 
-  #accountList {
+  .account-list {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    margin-top: 12px;
+    background: #fff;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
   }
 
-  #accountList.open {
-    max-height: 500px; /* 충분히 큰 값, 내용 크기에 따라 조절 가능 */
+  .account-list.open {
+    max-height: 800px;
   }
 
   .account-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 6px 0;
+    padding: 15px;
     border-bottom: 1px solid #eee;
   }
 
@@ -369,37 +385,73 @@ padding: 0 10px;
   }
 
   .account-info {
-    font-size: 16px;
-    color: #333;
-  }
-
-  .bank {
-    font-weight: 600;
-    margin-right: 6px;
-  }
-
-  .number {
-    font-family: monospace;
-    margin-right: 6px;
-  }
-
-  .owner {
-    color: #666;
-  }
-
-  .copy-btn {
-    background-color: #3d88f4;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 3px;
-    cursor: pointer;
+    font-family: 'Pretendard-Regular';
+    font-weight: 300;
     font-size: 14px;
+    text-align: left;
+    color: #505050;
+  }
+  .bank {
+    margin-right: 5px;
+  }
+  .number {
+    position: relative;
+    margin-left: 5px;
+    }
+  .number::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 1px;
+    height: 8px;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: -5px;
+    background: #505050;
+  }
+  .copy-btn {
+    font-family: 'Pretendard-Regular';
+    background-color: #fff;
+    color: #505050;
+    border: 1px solid #e0e0e0;
+    padding: 6px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
     transition: background-color 0.3s ease;
   }
-
+  .copy-btn::before {
+    content: '';
+    display: inline-block;
+    background-image: url(images/copy_icon.png);
+    width: 11px;
+    height: 12px;
+    margin-right: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
   .copy-btn:hover {
-    background-color: #2a62b7;
+    opacity: 0.6;
+  }
+
+  #footer {
+    background: #699169;
+    color: #fff;
+    padding: 20px;
+  }
+  #footer button{
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    margin: auto;
+    background: none;
+    border: none;
+    margin-bottom: 20px;
+  }
+  #footer p {
+    font-size: 12px;
+    text-align: center;
   }
 @keyframes sway {
   0%   { transform: rotate(-10deg); }
