@@ -15,6 +15,84 @@
 
 </head>
 <body>
+  <!-- 유튜브 iframe (숨김) -->
+<div style="display: none">
+  <iframe
+    id="ytplayer"
+    width="0"
+    height="0"
+    src="https://www.youtube.com/embed/cnn3VTL6ZS4?enablejsapi=1&mute=1&loop=1&playlist=cnn3VTL6ZS4"
+    frameborder="0"
+    allow="autoplay"
+    allowfullscreen
+  ></iframe>
+</div>
+
+<!-- 토글 버튼 -->
+<button id="toggleMusicBtn" style="display:none;">🔊 음악 끄기</button>
+
+<style>
+  #toggleMusicBtn {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    padding: 10px 14px;
+    border-radius: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+</style>
+
+<script>
+  let player;
+  let isPlaying = false;
+  let firstTouch = false;
+
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player("ytplayer", {
+      events: {
+        onReady: function () {
+          document.body.addEventListener("click", playOnFirstTouch);
+          document.body.addEventListener("touchstart", playOnFirstTouch);
+        }
+      }
+    });
+  }
+
+  function playOnFirstTouch() {
+    if (!firstTouch && player) {
+      firstTouch = true;
+      player.unMute();
+      player.playVideo();
+      isPlaying = true;
+      document.getElementById("toggleMusicBtn").style.display = "block";
+
+      // 이후 클릭 이벤트 제거
+      document.body.removeEventListener("click", playOnFirstTouch);
+      document.body.removeEventListener("touchstart", playOnFirstTouch);
+    }
+  }
+
+  document.getElementById("toggleMusicBtn").addEventListener("click", function () {
+    if (isPlaying) {
+      player.pauseVideo();
+      this.textContent = "🔊 음악 켜기";
+    } else {
+      player.playVideo();
+      this.textContent = "🔇 음악 끄기";
+    }
+    isPlaying = !isPlaying;
+  });
+
+  const tag = document.createElement("script");
+  tag.src = "https://www.youtube.com/iframe_api";
+  document.body.appendChild(tag);
+</script>
+
   <div class="container">
     <!-- 01. 히어로 섹션 -->
     <section id="hero">
@@ -380,4 +458,5 @@ document.querySelectorAll('.toggle-btn').forEach(button => {
     });
   });
 </script>
+
 </body>
