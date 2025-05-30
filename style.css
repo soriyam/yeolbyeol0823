@@ -68,18 +68,18 @@ p {
 /* 섹션별 스타일 */
 #hero {
   position: relative;
-  height: 100vh;
   color: #114D12;
   text-align: center;
   overflow: hidden;
   background-color: #FCF8EE;
+  padding: 20px 0;
 }
 #hero h1 {
   font-family: "Crimson Text", serif;
   font-weight: 400;
   color: #114D12;
   font-size: 40px;
-  margin-top: 10vh;
+  margin-top: 30px;
   margin-bottom: 20px;
   font-weight: 600;
 }

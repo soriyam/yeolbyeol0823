@@ -15,83 +15,61 @@
 
 </head>
 <body>
-  <!-- 유튜브 iframe (숨김) -->
-<div style="display: none">
-  <iframe
-    id="ytplayer"
-    width="0"
-    height="0"
-    src="https://www.youtube.com/embed/cnn3VTL6ZS4?enablejsapi=1&mute=1&loop=1&playlist=cnn3VTL6ZS4"
-    frameborder="0"
-    allow="autoplay"
-    allowfullscreen
-  ></iframe>
-</div>
+  <style>
+    #toggleBgm {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      width: 48px;
+      height: 48px;
+      background-color: rgba(255, 255, 255, 0.0); /* 완전 투명 */
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 9999;
+      padding: 0;
+    }
 
-<!-- 토글 버튼 -->
-<button id="toggleMusicBtn" style="display:none;">🔊 음악 끄기</button>
+    #toggleBgm img {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+  <!-- 배경음악 -->
+  <audio id="bgm" autoplay loop>
+    <source src="music/romantic-wedding-background-music-337990.mp3" type="audio/mpeg">
+    브라우저가 오디오를 지원하지 않습니다.
+  </audio>
 
-<style>
-  #toggleMusicBtn {
-    position: fixed;
-    top: 16px;
-    right: 16px;
-    z-index: 9999;
-    background-color: rgba(255, 255, 255, 0.9);
-    border: none;
-    padding: 10px 14px;
-    border-radius: 30px;
-    font-size: 14px;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  }
-</style>
+  <!-- 이미지 버튼 -->
+  <button id="toggleBgm">
+    <img id="bgmIcon" src="images/pause.svg" alt="배경음악 정지">
+  </button>
 
-<script>
-  let player;
-  let isPlaying = false;
-  let firstTouch = false;
+  <script>
+    const bgm = document.getElementById('bgm');
+    const btnIcon = document.getElementById('bgmIcon');
 
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player("ytplayer", {
-      events: {
-        onReady: function () {
-          document.body.addEventListener("click", playOnFirstTouch);
-          document.body.addEventListener("touchstart", playOnFirstTouch);
-        }
+    document.getElementById('toggleBgm').addEventListener('click', () => {
+      if (bgm.paused) {
+        bgm.play();
+        btnIcon.src = 'images/pause.svg';
+        btnIcon.alt = '배경음악 정지';
+      } else {
+        bgm.pause();
+        btnIcon.src = 'images/play.svg';
+        btnIcon.alt = '배경음악 재생';
       }
     });
-  }
 
-  function playOnFirstTouch() {
-    if (!firstTouch && player) {
-      firstTouch = true;
-      player.unMute();
-      player.playVideo();
-      isPlaying = true;
-      document.getElementById("toggleMusicBtn").style.display = "block";
-
-      // 이후 클릭 이벤트 제거
-      document.body.removeEventListener("click", playOnFirstTouch);
-      document.body.removeEventListener("touchstart", playOnFirstTouch);
-    }
-  }
-
-  document.getElementById("toggleMusicBtn").addEventListener("click", function () {
-    if (isPlaying) {
-      player.pauseVideo();
-      this.textContent = "🔊 음악 켜기";
-    } else {
-      player.playVideo();
-      this.textContent = "🔇 음악 끄기";
-    }
-    isPlaying = !isPlaying;
-  });
-
-  const tag = document.createElement("script");
-  tag.src = "https://www.youtube.com/iframe_api";
-  document.body.appendChild(tag);
-</script>
+    // 자동재생 실패 대비
+    window.addEventListener('DOMContentLoaded', () => {
+      btnIcon.src = bgm.paused ? 'images/play.svg' : 'images/pause.svg';
+    });
+  </script>
 
   <div class="container">
     <!-- 01. 히어로 섹션 -->
