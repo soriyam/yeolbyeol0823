@@ -36,6 +36,8 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://soriyam.github.io/wedding-invite01/" />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="건열 & 은별 모바일 청첩장" />
+  <meta property="og:locale" content="ko_KR" />
 </head>
 
 <body>
@@ -60,8 +62,18 @@
       object-fit: contain;
     }
   </style>
-</head>
-<body>
+  
+  <div id="intro">
+    <div class="intro-content">
+      <div class="sub-text">
+        <span class="letter">I</span><span class="letter">N</span><span class="letter">V</span><span class="letter">I</span><span class="letter">T</span><span class="letter">A</span><span class="letter">T</span><span class="letter">I</span><span class="letter">O</span><span class="letter">N</span>
+      </div>
+      <div class="main-text">
+        <span class="letter">초</span><span class="letter">대</span><span class="letter">합</span><span class="letter">니</span><span class="letter">다</span>
+      </div>
+    </div>
+  </div>
+
   <!-- 배경음악 -->
   <audio id="bgm" autoplay loop>
     <source src="music/romantic-wedding-background-music-337990.mp3" type="audio/mpeg">
@@ -460,5 +472,15 @@ document.querySelectorAll('.toggle-btn').forEach(button => {
     });
   });
 </script>
-
+<script>
+  window.addEventListener('load', () => {
+    const intro = document.getElementById('intro');
+    setTimeout(() => {
+      intro.style.opacity = 0;
+      setTimeout(() => {
+        intro.style.display = 'none';
+      }, 1000); // 페이드아웃 애니메이션 시간
+    }, 3000); // 2초(마지막 글자 등장) + 1초 대기 = 총 3초 후 사라짐
+  });
+</script>
 </body>
