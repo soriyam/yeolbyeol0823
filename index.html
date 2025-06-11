@@ -82,7 +82,7 @@
 
   <!-- 이미지 버튼 -->
   <button id="toggleBgm">
-    <img id="bgmIcon" src="images/pause.svg" alt="배경음악 정지">
+    <img id="bgmIcon" src="images/pause.svg" loading="lazy" alt="배경음악 정지">
   </button>
 
   <script>
@@ -110,13 +110,13 @@
   <div class="container">
     <!-- 01. 히어로 섹션 -->
     <section id="hero">
-      <h1>WE ARE GETTING<br>MARRIED</h1>
+      <h1 class="fade-target">WE ARE GETTING<br>MARRIED</h1>
       <div class="main-wrap">
-        <div class="side-wrap"><p class="side-text" id="name01">GUNYEOL</p></div>
-        <div id="main-img">
+        <div class="side-wrap fade-target"><p class="side-text" id="name01">GUNYEOL</p></div>
+        <div id="main-img" >
           <div style="margin-top: 10px;">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
-            <path d=M.5,117.03c19.81,7.76,43.47,5.94,63.43-.43s38.66-18.2,54.61-32.34c12.64-11.2,24.08-24.29,30.47-39.92,3.24-7.94,4.96-17.06,2.88-25.52-1.95-7.92-8.08-15.22-16.03-17.55-5.71-1.67-12.15-.58-16.99,2.87-4.34,3.1-6.97,7.75-7.81,12.97-.63,3.88-.34,7.85.22,11.72-4.57-3.98-11.49-7.61-17.57-8.35-5.09-.62-10.39.77-14.52,3.81-6.83,5.04-9.65,14.14-8.3,22.33,1.46,8.91,7.39,16.68,14.86,21.75s16.37,7.67,25.29,9.01c36.13,5.44,73.8-1.64,103.43-23.74,12.23-9.13,22.75-20.48,32.44-32.19
+            <path d="M.5,117.03c19.81,7.76,43.47,5.94,63.43-.43s38.66-18.2,54.61-32.34c12.64-11.2,24.08-24.29,30.47-39.92,3.24-7.94,4.96-17.06,2.88-25.52-1.95-7.92-8.08-15.22-16.03-17.55-5.71-1.67-12.15-.58-16.99,2.87-4.34,3.1-6.97,7.75-7.81,12.97-.63,3.88-.34,7.85.22,11.72-4.57-3.98-11.49-7.61-17.57-8.35-5.09-.62-10.39.77-14.52,3.81-6.83,5.04-9.65,14.14-8.3,22.33,1.46,8.91,7.39,16.68,14.86,21.75s16.37,7.67,25.29,9.01c36.13,5.44,73.8-1.64,103.43-23.74,12.23-9.13,22.75-20.48,32.44-32.19"
             stroke="#fff"
             fill="none"
             stroke-width="2"
@@ -133,22 +133,22 @@
           </path>
         </svg>
       </div>
-          <img id="flower01" src="images/flower01.png" alt="꽃 이미지01">
-          <img id="flower02" src="images/flower02.png" alt="꽃 이미지02">
+          <img id="flower01" src="images/flower01.png" loading="lazy" alt="꽃 이미지01">
+          <img id="flower02" src="images/flower02.png" loading="lazy" alt="꽃 이미지02">
         </div>
-        <div class="side-wrap"><p class="side-text" id="name02">EUNBYEOL</p></div>
+        <div class="side-wrap fade-target"><p class="side-text" id="name02">EUNBYEOL</p></div>
       </div>
-      <div class="info-text"><span style="font-family: 'Harmattan', sans-serif; font-size:18px;">2025.08.23. SAT 1:00pm</span>
+      <div class="info-text fade-target"><span style="font-family: 'Harmattan', sans-serif; font-size:18px;">2025.08.23. SAT 1:00pm</span>
         <br><span>순천 아모르웨딩컨벤션</span></div>
     </section>
     <section id="contact">
-      <div class="name-box">
+      <div class="name-box fade-target">
       <p>양동채 ‧ 김자영의<br>
         장남 <span style="font-size: 20px;">양건열</span></p> 
         <a href="tel:01035993664">연락하기</a>
       </div>
       <div class="vertical-line"></div>
-      <div class="name-box">
+      <div class="name-box fade-target">
       <p>고성식 ‧ 유미란의<br>
         장녀 <span style="font-size: 20px;">고은별</span></p> 
         <a href="tel:01086241592">연락하기</a>
@@ -156,9 +156,9 @@
     </section>
     <!-- 02. 메시지 -->
     <section id="message">
-      <p class="sub-title" style="text-align: center;">INVITATION</p>
-      <h2 class="title" style="font-size: 24px; color: #114D12">모시는 말씀</h2>
-      <p style="font-size: 18px; text-align: center;">
+      <p class="sub-title fade-target" style="text-align: center;">INVITATION</p>
+      <h2 class="title fade-target" style="font-size: 24px; color: #114D12">모시는 말씀</h2>
+      <p class="fade-target" style="font-size: 18px; text-align: center;">
         4년여의 시간을 함께한 우리<br>
         앞으로도 평생을 같은 곳을 바라보며<br>
         함께 걷고자 합니다.<br>
@@ -166,14 +166,14 @@
         귀한 걸음으로 축하하여 주시면<br>
         더없는 기쁨으로 간직하겠습니다.</p>
     </section>
-    <img style="width: 100%;" src="images/heart_line02.svg">
+    <img class="fade-target" style="width: 100%;" src="images/heart_line02.svg" loading="lazy">
     
     <!-- 날짜 달력 -->
     <section id="calendar">
-      <h5>8월</h5>
-      <p>2025년 8월 23일 토요일 오후 1시<br>
+      <h5 class="fade-target">8월</h5>
+      <p class="fade-target">2025년 8월 23일 토요일 오후 1시<br>
         순천 아모르웨딩컨벤션</p>
-        <table class="calendar">
+        <table class="calendar fade-target">
   <thead>
     <tr>
       <th style="color:#114D12">일</th>
@@ -217,9 +217,9 @@
 
     <!-- 오시는 길 -->
     <section id="location">
-      <img style="width: 20px;" src="images/map_icon.png">
-      <p class="sub-title" style="text-align: center;">LOCATION</p>
-      <h2 class="title" style="font-size: 24px; color: #114D12">오시는 길</h2>
+      <img class="fade-target" style="width: 20px;" src="images/map_icon.png" loading="lazy">
+      <p class="sub-title fade-target" style="text-align: center;">LOCATION</p>
+      <h2 class="title fade-target" style="font-size: 24px; color: #114D12">오시는 길</h2>
     <!--
       * 카카오맵 - 약도서비스
       * 한 페이지 내에 약도를 2개 이상 넣을 경우에는
@@ -239,22 +239,22 @@
         "mapHeight" : "240"
       }).render();
     </script>
-      <p style="font-size: 16px; margin: 15px 0;">전남 순천시 서면 압곡길 94<br>
+      <p class="fade-target" style="font-size: 16px; margin: 15px 0;">전남 순천시 서면 압곡길 94<br>
       아모르웨딩컨벤션</p>
       <div class="map-btn-wrap">
-      <a href="https://tmap.life/a43ceb3e" class="map-btn"><img src="images/Tmap.png"><span>T맵</span></a>
-      <a href="https://kko.kakao.com/vl33Dp8o1w" class="map-btn"><img src="images/kakaomap.png"><span>카카오맵</span></a>
-      <a href="https://naver.me/F6x0FFHV" class="map-btn"><img src="images/naver_map.png"><span>네이버지도</span></a>
+      <a href="https://tmap.life/a43ceb3e" class="map-btn fade-target"><img src="images/Tmap.png" loading="lazy"><span>T맵</span></a>
+      <a href="https://kko.kakao.com/vl33Dp8o1w" class="map-btn fade-target"><img src="images/kakaomap.png" loading="lazy"><span>카카오맵</span></a>
+      <a href="https://naver.me/F6x0FFHV" class="map-btn fade-target"><img src="images/naver_map.png" loading="lazy"><span>네이버지도</span></a>
       </div>
       <div class="traffic-wrap">
-        <img src="images/bus_icon.png">
+        <img src="images/bus_icon.png" loading="lazy">
         <p>
           <span class="trffic-title">버스</span><br>
           <span class="traffic-info">압곡.화정 정류장<br>22, 59, 59-1, 101</span>
         </p>
       </div>
       <div class="traffic-wrap">
-        <img src="images/car_icon.png">
+        <img src="images/car_icon.png" loading="lazy">
         <p>
           <span class="trffic-title">자가용</span><br>
           <span class="traffic-info">건물 외부 주차장 이용</span>
@@ -270,47 +270,47 @@
   <div class="swiper-wrapper">
     <div class="swiper-slide">
       <a href="images/photo01.jpeg" data-fancybox="wedding-gallery">
-        <img src="images/photo01.jpeg" alt="사진1">
+        <img src="images/photo01.jpeg" alt="사진1" loading="lazy">
       </a>
     </div>
     <div class="swiper-slide">
       <a href="images/photo02.jpeg" data-fancybox="wedding-gallery">
-        <img src="images/photo02.jpeg" alt="사진2">
+        <img src="images/photo02.jpeg" alt="사진2" loading="lazy">
       </a>
     </div>
     <div class="swiper-slide">
       <a href="images/photo03.jpeg" data-fancybox="wedding-gallery">
-        <img src="images/photo03.jpeg" alt="사진3">
+        <img src="images/photo03.jpeg" alt="사진3" loading="lazy">
       </a>
     </div>
     <div class="swiper-slide">
       <a href="images/photo04.jpeg" data-fancybox="wedding-gallery">
-        <img src="images/photo04.jpeg" alt="사진4">
+        <img src="images/photo04.jpeg" alt="사진4" loading="lazy">
       </a>
     </div>
     <div class="swiper-slide">
       <a href="images/photo05.jpeg" data-fancybox="wedding-gallery">
-        <img src="images/photo05.jpeg" alt="사진5">
+        <img src="images/photo05.jpeg" alt="사진5" loading="lazy">
       </a>
     </div>
     <div class="swiper-slide">
       <a href="images/photo06.jpeg" data-fancybox="wedding-gallery">
-        <img src="images/photo06.jpeg" alt="사진6">
+        <img src="images/photo06.jpeg" alt="사진6" loading="lazy">
       </a>
     </div>
     <div class="swiper-slide">
       <a href="images/photo07.jpeg" data-fancybox="wedding-gallery">
-        <img src="images/photo07.jpeg" alt="사진7">
+        <img src="images/photo07.jpeg" alt="사진7" loading="lazy">
       </a>
     </div>
     <div class="swiper-slide">
       <a href="images/photo08.jpeg" data-fancybox="wedding-gallery">
-        <img src="images/photo08.jpeg" alt="사진8">
+        <img src="images/photo08.jpeg" alt="사진8" loading="lazy">
       </a>
     </div>
     <div class="swiper-slide">
       <a href="images/photo09.jpeg" data-fancybox="wedding-gallery">
-        <img src="images/photo09.jpeg" alt="사진9">
+        <img src="images/photo09.jpeg" alt="사진9" loading="lazy">
       </a>
     </div>
   </div>
@@ -322,7 +322,7 @@
 
     <!-- 06. 마음 전하실 곳 -->
 <section id="gift">
-  <img src="images/heart_icon.svg" alt="heart icon">
+  <img src="images/heart_icon.svg" alt="heart icon" loading="lazy">
   <h2 class="title" style="font-size: 24px; color: #114D12">마음 전하실 곳</h2>
   <!-- 신랑측 계좌번호 -->
   <button class="toggle-btn" data-target="groomAccountList">
@@ -379,23 +379,23 @@
         <div class="account-row">
       <div class="account-info">
         <span class="bank">농협은행</span>
-        <span class="number">333-3333-3333</span><br>
+        <span class="number">647-12-134787</span><br>
         <span class="owner">고성식</span>
       </div>
-      <button class="copy-btn" data-account="333-3333-3333">복사</button>
+      <button class="copy-btn" data-account="647-12-134787">복사</button>
     </div>
         <div class="account-row">
       <div class="account-info">
         <span class="bank">농협은행</span>
-        <span class="number">333-3333-3333</span><br>
+        <span class="number">647-02-262667</span><br>
         <span class="owner">유미란</span>
       </div>
-      <button class="copy-btn" data-account="333-3333-3333">복사</button>
+      <button class="copy-btn" data-account="647-02-262667">복사</button>
     </div>
   </div>
 </section>
 <section id="footer">
-  <button id="copyLinkBtn"><img style="height: 16px;" src="images/link_icon.png"> 링크주소 복사하기</button>
+  <button id="copyLinkBtn"><img style="height: 16px;" src="images/link_icon.png" loading="lazy"> 링크주소 복사하기</button>
   <p>© 2025. Made with love by sori</p>
 </section>
 
@@ -483,4 +483,32 @@ document.querySelectorAll('.toggle-btn').forEach(button => {
     }, 3000); // 2초(마지막 글자 등장) + 1초 대기 = 총 3초 후 사라짐
   });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const targets = document.querySelectorAll(".fade-target");
+
+  let observer = new IntersectionObserver((entries, observer) => {
+    // 화면에 들어온 요소만 필터
+    const visibleEntries = entries.filter(entry => entry.isIntersecting);
+
+    if (visibleEntries.length > 0) {
+      // 순서대로 딜레이 주면서 애니메이션 추가
+      visibleEntries.forEach((entry, index) => {
+        const el = entry.target;
+        el.style.animationDelay = `${index * 0.2}s`;
+        el.classList.add("fade-in");
+
+        // 한 번 관찰 후 더 이상 감시하지 않음 (중복 애니메이션 방지)
+        observer.unobserve(el);
+      });
+    }
+  }, {
+    threshold: 0.1 // 요소가 10% 보이면 애니메이션 실행
+  });
+
+  targets.forEach(el => observer.observe(el));
+});
+
+</script>
+
 </body>
