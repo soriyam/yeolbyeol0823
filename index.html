@@ -114,25 +114,6 @@
       <div class="main-wrap">
         <div class="side-wrap fade-target"><p class="side-text" id="name01">GEONYEOL</p></div>
         <div id="main-img" >
-          <div style="margin-top: 10px;">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
-            <path d="M.5,117.03c19.81,7.76,43.47,5.94,63.43-.43s38.66-18.2,54.61-32.34c12.64-11.2,24.08-24.29,30.47-39.92,3.24-7.94,4.96-17.06,2.88-25.52-1.95-7.92-8.08-15.22-16.03-17.55-5.71-1.67-12.15-.58-16.99,2.87-4.34,3.1-6.97,7.75-7.81,12.97-.63,3.88-.34,7.85.22,11.72-4.57-3.98-11.49-7.61-17.57-8.35-5.09-.62-10.39.77-14.52,3.81-6.83,5.04-9.65,14.14-8.3,22.33,1.46,8.91,7.39,16.68,14.86,21.75s16.37,7.67,25.29,9.01c36.13,5.44,73.8-1.64,103.43-23.74,12.23-9.13,22.75-20.48,32.44-32.19"
-            stroke="#fff"
-            fill="none"
-            stroke-width="2"
-            stroke-dasharray="1000"
-            stroke-dashoffset="1000">
-            <animate attributeName="stroke-dashoffset"
-            from="1000" to="0"
-            dur="2s"
-            fill="freeze"
-            repeatCount="1"
-            calcMode="spline"
-            keyTimes="0;1"
-            keySplines="0.25 0 1 1" />
-          </path>
-        </svg>
-      </div>
           <img id="flower01" src="images/flower01.png" loading="lazy" alt="꽃 이미지01">
           <img id="flower02" src="images/flower02.png" loading="lazy" alt="꽃 이미지02">
         </div>
@@ -264,9 +245,9 @@
 
     <!-- 04. 갤러리 -->
     <section id="gallery">
-      <p class="sub-title" style="text-align: center;">GALLERY</p>
-      <h2 class="title" style="font-size: 24px; color: #114D12">갤러리</h2>
-<div class="swiper-container">
+      <p class="sub-title fade-target" style="text-align: center;">GALLERY</p>
+      <h2 class="title fade-target" style="font-size: 24px; color: #114D12">갤러리</h2>
+<div class="swiper-container fade-target">
   <div class="swiper-wrapper">
     <div class="swiper-slide">
       <a href="images/photo01.jpeg" data-fancybox="wedding-gallery">
@@ -322,10 +303,10 @@
 
     <!-- 06. 마음 전하실 곳 -->
 <section id="gift">
-  <img src="images/heart_icon.svg" alt="heart icon" loading="lazy">
-  <h2 class="title" style="font-size: 24px; color: #114D12">마음 전하실 곳</h2>
+  <img class="fade-target" src="images/heart_icon.svg" alt="heart icon" loading="lazy">
+  <h2 class="title fade-target" style="font-size: 24px; color: #114D12">마음 전하실 곳</h2>
   <!-- 신랑측 계좌번호 -->
-  <button class="toggle-btn" data-target="groomAccountList">
+  <button class="toggle-btn fade-target" data-target="groomAccountList">
     <span class="btn-text">신랑측 계좌번호</span>
     <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24">
       <path d="M8 10l4 4 4-4" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
@@ -360,7 +341,7 @@
   </div>
 
   <!-- 신부측 계좌번호 -->
-  <button class="toggle-btn" data-target="brideAccountList">
+  <button class="toggle-btn fade-target" data-target="brideAccountList">
     <span class="btn-text">신부측 계좌번호</span>
     <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24">
       <path d="M8 10l4 4 4-4" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
@@ -479,7 +460,7 @@ document.querySelectorAll('.toggle-btn').forEach(button => {
       intro.style.opacity = 0;
       setTimeout(() => {
         intro.style.display = 'none';
-      }, 1000); // 페이드아웃 애니메이션 시간
+      }, 500); // 페이드아웃 애니메이션 시간
     }, 2000); // 2초(마지막 글자 등장) + 1초 대기 = 총 3초 후 사라짐
   });
 </script>
