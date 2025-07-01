@@ -381,8 +381,8 @@ padding: 0 10px;
 .swiper-button-next::after {
   font-size: 30px !important; /* 기본은 44px */
 }
-.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-    margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 3px);
+.swiper-pagination-bullet {
+  margin: 0 3px !important; /* ← 여기 간격 조절 */
 }
 .swiper-pagination-bullet-active {
   background: #699169 !important; /* 활성 도트 색상 (완전 흰색) */
